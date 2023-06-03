@@ -1,4 +1,4 @@
 # weather-app-react
 
-# Weather application made with react and typescript
+Weather application made with react and typescript
 
