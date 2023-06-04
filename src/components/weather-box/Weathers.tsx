@@ -1,26 +1,44 @@
 import React from "react";
 import "./weather.scss";
-type Props = {};
+type Props = {
+  todayImg: string;
+  city: string;
+  temperature: string;
+  todayInfo: string;
+  nextDay: string;
+  nextDayImg: string;
+  nextDayTemperature: string;
+};
 
-const Weathers: React.FC<Props> = (props: Props) => {
+const Weathers: React.FC<Props> = ({
+  todayImg,
+  city,
+  temperature,
+  todayInfo,
+  nextDay,
+  nextDayImg,
+  nextDayTemperature,
+}) => {
   return (
     <div className="weather-box">
       <div className="today">
-        <img src="https://www.freepnglogos.com/uploads/sun-png/sun-day-rays-sun-image-pixabay-35.png" />
+        <div className="img-div">
+          <img src={todayImg} />
+        </div>
         <div className="temp-today">
           <h2>Today</h2>
-          <h1>New York</h1>
+          <h1>{city}</h1>
           <p>
-            Temperature: <span>17 C</span>
+            Temperature: <span>{temperature}°C</span>
           </p>
-          <p>Clear Sky</p>
+          <p>{todayInfo}</p>
         </div>
       </div>
       <div className="next-days">
         <div className="next-day-item">
-          <h3>Wednesday</h3>
-          <img src="https://www.freepnglogos.com/uploads/sun-png/sun-day-rays-sun-image-pixabay-35.png" />
-          <p>21 C</p>
+          <h3></h3>
+          <img src="" />
+          <p></p>
         </div>
       </div>
     </div>

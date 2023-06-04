@@ -1,15 +1,31 @@
 import React from "react";
 import "./Input.scss";
+import { useState } from "react";
 
-type IProps = {
-  title: string;
-};
+interface IProps {
+  onCityChange: (city: string) => void;
+}
 
-const Input: React.FC<IProps> = ({ title }) => {
+const Input: React.FC<IProps> = ({ onCityChange }) => {
+  const [city, setCity] = useState<string>("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCity(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    onCityChange(city);
+  };
+
   return (
     <div className="input-div">
-      <label htmlFor="input">{title}</label>
-      <input type="text" id="input" placeholder="Give me a city..." />
+      <input
+        type="text"
+        id="input"
+        placeholder="Give me a city..."
+        onChange={handleChange}
+      />
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 };
