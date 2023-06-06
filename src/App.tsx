@@ -44,8 +44,13 @@ function App() {
         ];
 
         setData(weatherData);
+
+        const response2 = await axios.get(
+          `https://pro.openweathermap.org/data/2.5/forecast/hourly?q=${city}&appid=1e2497f8bf54c3994aeaa4a574a684cd)`
+        );
+        console.log(response2);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
 

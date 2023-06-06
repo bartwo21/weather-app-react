@@ -3,13 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(105, 153, 250, 0.5);
   color: rgba(255, 255, 255, 0.87);
   min-width: 50%;
   padding: 2.5rem 0rem;
-  border-radius: 20px;
+  border-radius: 30px;
   margin-top: 40px;
-  box-shadow: rgb(38, 57, 77) 0px 30px 50px -12px;
+  box-shadow: rgb(38, 57, 77) 0px 5px 90px 1px;
   .today {
     display: flex;
     flex-direction: row;
@@ -40,11 +39,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #f2f2f2;
+      background-color: rgba(242, 242, 242);
       padding: 30px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
+      border-radius: 30%;
+      box-shadow: rgb(130, 167, 201) 0px 0px 70px -18px;
       img {
         width: 150px;
         height: 150px;
