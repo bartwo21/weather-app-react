@@ -5,9 +5,7 @@ type Props = {
   city: string;
   temperature: string;
   todayInfo: string;
-  nextDay: string;
-  nextDayImg: string;
-  nextDayTemperature: string;
+  nextDay: any;
 };
 
 const Weathers: React.FC<Props> = ({
@@ -16,9 +14,8 @@ const Weathers: React.FC<Props> = ({
   temperature,
   todayInfo,
   nextDay,
-  nextDayImg,
-  nextDayTemperature,
 }) => {
+  console.log(nextDay[0][0]);
   return (
     <div className="weather-box">
       <div className="today">
@@ -34,11 +31,35 @@ const Weathers: React.FC<Props> = ({
           <p>{todayInfo}</p>
         </div>
       </div>
+
       <div className="next-days">
         <div className="next-day-item">
-          <h3></h3>
-          <img src="" />
-          <p></p>
+          <h3>{nextDay[0][0][8].dt_txt.substring(0, 10)}</h3>
+          <div className="next-day-item-desc">
+            <h2>{nextDay[0][0][8].weather[0].description.toUpperCase()}</h2>
+            <p>{nextDay[0][0][8].main.temp.toString().substring(0, 2)}°C</p>
+          </div>
+        </div>
+        <div className="next-day-item">
+          <h3>{nextDay[0][0][16].dt_txt.substring(0, 10)}</h3>
+          <div className="next-day-item-desc">
+            <h2>{nextDay[0][0][16].weather[0].description.toUpperCase()}</h2>
+            <p>{nextDay[0][0][16].main.temp.toString().substring(0, 2)}°C</p>
+          </div>
+        </div>
+        <div className="next-day-item">
+          <h3>{nextDay[0][0][24].dt_txt.substring(0, 10)}</h3>
+          <div className="next-day-item-desc">
+            <h2>{nextDay[0][0][24].weather[0].description.toUpperCase()}</h2>
+            <p>{nextDay[0][0][24].main.temp.toString().substring(0, 2)}°C</p>
+          </div>
+        </div>
+        <div className="next-day-item">
+          <h3>{nextDay[0][0][32].dt_txt.substring(0, 10)}</h3>
+          <div className="next-day-item-desc">
+            <h2>{nextDay[0][0][32].weather[0].description.toUpperCase()}</h2>
+            <p>{nextDay[0][0][32].main.temp.toString().substring(0, 2)}°C</p>
+          </div>
         </div>
       </div>
     </div>

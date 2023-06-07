@@ -53,17 +53,49 @@
   .next-days {
     display: flex;
     align-items: flex-start;
+    justify-content: space-around;
     width: 100%;
+    min-height: 220px;
     margin-top: 50px;
-
     .next-day-item {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 150px;
-      img {
-        width: 70px;
-        height: 70px;
+      padding: 10px 15px;
+      .next-day-item-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f2f2f2;
+        color: #333;
+        max-width: 100%;
+        margin-top: 10px;
+        border-radius: 30px;
+        padding: 10px;
+        box-shadow: rgb(130, 167, 201) 0px 0px 70px -18px;
+        &:hover {
+          border: 1px solid rgb(38, 57, 77);
+          transform: scale(1.05);
+          transition: all 0.5s;
+          cursor: pointer;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          text-align: center;
+        }
+        h2 {
+          font-size: 0.9rem;
+          font-weight: 600;
+          padding: 20px;
+          max-height: 50px;
+          letter-spacing: 2px;
+          text-align: center;
+          margin: 20px;
+        }
       }
     }
     p {

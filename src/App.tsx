@@ -9,9 +9,7 @@ interface IWeather {
   city: string;
   temperature: string;
   todayInfo: string;
-  nextDay: string;
-  nextDayImg: string;
-  nextDayTemperature: string;
+  nextDay: object;
 }
 
 function App() {
@@ -31,24 +29,21 @@ function App() {
         const info = currentDay.condition.text;
         const position = location.name;
 
+        const response2 = await axios.get(
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=942b33899592b904111003ec640c1044&units=metric`
+        );
+        const nextDay = response2.data.list;
+
         const weatherData: IWeather[] = [
           {
             todayImg: icon,
             city: position,
             temperature: tempToday,
             todayInfo: info,
-            nextDay: "",
-            nextDayImg: "",
-            nextDayTemperature: "",
+            nextDay: [nextDay],
           },
         ];
-
         setData(weatherData);
-
-        const response2 = await axios.get(
-          `https://pro.openweathermap.org/data/2.5/forecast/hourly?q=${city}&appid=1e2497f8bf54c3994aeaa4a574a684cd)`
-        );
-        console.log(response2);
       } catch (error) {
         console.error(error);
       }
@@ -72,9 +67,7 @@ function App() {
           city={weather.city}
           temperature={weather.temperature}
           todayInfo={weather.todayInfo}
-          nextDay={""}
-          nextDayImg={""}
-          nextDayTemperature={""}
+          nextDay={[weather.nextDay]}
         />
       ))}
     </div>
