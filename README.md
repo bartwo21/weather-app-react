@@ -34,5 +34,5 @@ Due to the limitations of the second API used in the project, images representin
 
 ## Screenshots
 
-<img src="src/assets/screenshots/1.png" alt="" width="300" height="200">
-<img src="src/assets/screenshots/2.png" alt="" width="300" height="200">
+![Screenshot 1](src/assets/screenshots/1.png)
+![Screenshot 2](src/assets/screenshots/2.png)
