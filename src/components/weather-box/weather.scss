@@ -57,12 +57,10 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
       align-items: flex-end;
       h2 {
         font-size: 1.5rem;
-        font-weight: 600;
         letter-spacing: 2px;
       }
       h1 {
         font-size: 2.5rem;
-        font-weight: 600;
       }
       p {
         font-size: 1.2rem;
@@ -136,7 +134,6 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
         }
         h2 {
           font-size: 0.9rem;
-          font-weight: 600;
           max-height: 50px;
           letter-spacing: 2px;
           text-align: center;
@@ -155,24 +152,15 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
     }
   }
   @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-
     .today {
       flex-direction: column;
-      align-items: center;
 
       .temp-today {
         align-items: center;
-        text-align: center;
 
         h2 {
           margin-top: 10px;
           font-size: 1rem;
-        }
-
-        p {
-          font-size: 0.9rem;
         }
       }
       .img-div {
@@ -187,10 +175,6 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-
-      .next-day-item {
-        margin-bottom: 20px;
-      }
     }
   }
 }
