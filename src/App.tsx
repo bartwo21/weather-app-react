@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { TiWeatherStormy } from "react-icons/ti";
+import { IoMdSunny } from "react-icons/io";
 
 interface IWeather {
   todayImg: string;
@@ -67,6 +68,20 @@ function App() {
         },
         iconTheme: {
           primary: "#001220",
+          secondary: "#FFFAEE",
+        },
+      });
+    } else {
+      toast("Here is the weather.", {
+        icon: <IoMdSunny />,
+        style: {
+          border: "1px solid #d4d9e4",
+          padding: "16px",
+          color: "#001220",
+          background: "#abacad",
+        },
+        iconTheme: {
+          primary: "#201d00",
           secondary: "#FFFAEE",
         },
       });
