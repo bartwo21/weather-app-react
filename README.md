@@ -10,15 +10,15 @@ Due to the limitations of the second API used in the project, images representin
 ## Installation
 
 1. Clone the repository: <br>
-   git clone https://github.com/bartwo21/weather-app-react.git
+   `git clone https://github.com/bartwo21/weather-app-react.git`
 
 2. Install the dependencies: <br>
-   npm install
+   `npm install`
 
 ## Usage
 
 1. Start the development server: <br>
-   npm run dev
+   `npm run dev`
 
 ## Built With
 
