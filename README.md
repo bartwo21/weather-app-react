@@ -34,8 +34,8 @@ Due to the limitations of the second API used in the project, images representin
 
 ## Screenshots
 
-![Screenshot 1](../weather-app/src/assets/screenshots/1.png)
-![Screenshot 2](../weather-app/src/assets/screenshots/2.png)
+![Screenshot 1](src/assets/screenshots/1.png)
+![Screenshot 2](src/assets/screenshots/2.png)
 
 ## Demo
 
