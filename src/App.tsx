@@ -3,6 +3,8 @@ import Weathers from "./components/weather-box/Weathers";
 import Input from "./components/weather-input/Input";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { TiWeatherStormy } from "react-icons/ti";
 
 interface IWeather {
   todayImg: string;
@@ -54,12 +56,27 @@ function App() {
 
   const handleCityChange = (newCity: string) => {
     setCity(newCity);
+    if (newCity === "") {
+      toast("Please enter a city.", {
+        icon: <TiWeatherStormy />,
+        style: {
+          border: "1px solid #6999FA",
+          padding: "16px",
+          color: "#001220",
+          background: "#cbd4eb",
+        },
+        iconTheme: {
+          primary: "#001220",
+          secondary: "#FFFAEE",
+        },
+      });
+    }
   };
 
   return (
     <div className="app">
+      <Toaster position="top-right" reverseOrder={false} />
       <Input onCityChange={handleCityChange} />
-
       {data.map((weather, index) => (
         <Weathers
           key={index}

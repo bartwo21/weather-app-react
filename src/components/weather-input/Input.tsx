@@ -1,6 +1,7 @@
 import React from "react";
 import "./Input.scss";
 import { useState } from "react";
+import { BiSearchAlt } from "react-icons/bi";
 
 interface IProps {
   onCityChange: (city: string) => void;
@@ -25,7 +26,9 @@ const Input: React.FC<IProps> = ({ onCityChange }) => {
         placeholder="Give me a city..."
         onChange={handleChange}
       />
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit}>
+        <BiSearchAlt />
+      </button>
     </div>
   );
 };

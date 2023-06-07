@@ -1,3 +1,6 @@
+$fade-in-up-animation: fade-in-up 0.8s 0.001s forwards ease-in-out;
+$fade-in-animation: fade-in 0.8s 0.18s forwards;
+
 .weather-box {
   display: flex;
   flex-direction: column;
@@ -9,12 +12,45 @@
   border-radius: 30px;
   margin-top: 40px;
   box-shadow: rgb(38, 57, 77) 0px 5px 90px 1px;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.8s ease;
+
+  animation: $fade-in-up-animation;
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    40% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
   .today {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     width: 100%;
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: $fade-in-animation;
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
     .temp-today {
       display: flex;
       flex-direction: column;
@@ -42,7 +78,7 @@
       background-color: rgba(242, 242, 242);
       padding: 30px;
       border-radius: 30%;
-      box-shadow: rgb(130, 167, 201) 0px 0px 70px -18px;
+      box-shadow: rgb(130, 167, 201) 0px 0px 60px -18px;
       img {
         width: 150px;
         height: 150px;
@@ -57,6 +93,19 @@
     width: 100%;
     min-height: 220px;
     margin-top: 50px;
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: $fade-in-animation;
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
     .next-day-item {
       display: flex;
       flex-direction: column;
@@ -74,7 +123,7 @@
         margin-top: 10px;
         border-radius: 30px;
         padding: 10px;
-        box-shadow: rgb(130, 167, 201) 0px 0px 70px -18px;
+        box-shadow: rgb(130, 167, 201) 0px 0px 60px -18px;
         &:hover {
           border: 1px solid rgb(38, 57, 77);
           transform: scale(1.05);
@@ -107,6 +156,47 @@
       margin-top: 0.5rem;
       width: 70px;
       height: 70px;
+    }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    .today {
+      flex-direction: column;
+      align-items: center;
+
+      .temp-today {
+        align-items: center;
+        text-align: center;
+
+        h2 {
+          margin-top: 10px;
+          font-size: 1rem;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+      .img-div {
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+
+    .next-days {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      .next-day-item {
+        margin-bottom: 20px;
+      }
     }
   }
 }
