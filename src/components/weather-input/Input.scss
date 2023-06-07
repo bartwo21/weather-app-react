@@ -48,4 +48,7 @@
       box-shadow: 0 0 0 0.15vw skyblue;
     }
   }
+  @media (max-width: 768px) {
+    min-width: 80%;
+  }
 }

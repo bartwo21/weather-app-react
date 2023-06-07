@@ -88,10 +88,9 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
   }
   .next-days {
     display: flex;
-    align-items: flex-start;
     justify-content: space-around;
     width: 100%;
-    min-height: 220px;
+    min-height: 200px;
     margin-top: 50px;
 
     opacity: 0;
@@ -133,13 +132,11 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
 
         h3 {
           font-size: 1.2rem;
-          font-weight: 600;
           text-align: center;
         }
         h2 {
           font-size: 0.9rem;
           font-weight: 600;
-          padding: 20px;
           max-height: 50px;
           letter-spacing: 2px;
           text-align: center;
@@ -150,7 +147,6 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
     p {
       font-size: 1.2rem;
       text-align: center;
-      margin-top: 1rem;
     }
     img {
       margin-top: 0.5rem;
@@ -174,9 +170,7 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
           margin-top: 10px;
           font-size: 1rem;
         }
-        h1 {
-          font-size: 1.5rem;
-        }
+
         p {
           font-size: 0.9rem;
         }
