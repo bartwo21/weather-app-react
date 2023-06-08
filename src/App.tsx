@@ -23,7 +23,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/current.json?key=3880adeae7cd4b6489c220039230306&q=${city}`
+          `https://api.weatherapi.com/v1/current.json?key=3880adeae7cd4b6489c220039230306&q=${city}`
         );
         const currentDay = response.data.current;
         const location = response.data.location;
