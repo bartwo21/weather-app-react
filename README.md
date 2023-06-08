@@ -7,19 +7,6 @@ This project is a weather application built using React, TypeScript, and Vite. I
 The Weather App is a web application that allows users to check the weather conditions for their location. It provides accurate and up-to-date weather information using the data retrieved from the APIs.
 Due to the limitations of the second API used in the project, images representing the weather conditions are not available. Instead, descriptive text is used to indicate the weather conditions.
 
-## Installation
-
-1. Clone the repository: <br>
-   `git clone https://github.com/bartwo21/weather-app-react.git`
-
-2. Install the dependencies: <br>
-   `npm install`
-
-## Usage
-
-1. Start the development server: <br>
-   `npm run dev`
-
 ## Built With
 
 - [React](https://reactjs.org)
