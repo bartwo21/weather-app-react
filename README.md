@@ -10,6 +10,7 @@ Due to the limitations of the second API used in the project, images representin
 ## Built With
 
 - [React](https://reactjs.org)
+- [Typescript](https://www.typescriptlang.org/)
 - [React Hot Toast](https://github.com/timolins/react-hot-toast)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Axios](https://axios-http.com/)
