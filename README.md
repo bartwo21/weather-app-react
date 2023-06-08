@@ -32,11 +32,13 @@ Due to the limitations of the second API used in the project, images representin
 - The weather data is provided by [OpenWeatherMap](https://openweathermap.org/api) and [WeatherApi](https://www.weatherapi.com/).
 - Special thanks to the creators of the libraries used in this project.
 
+## Demo
+
+- [Link](https://weatherappbar2.netlify.app/)
+
 ## Screenshots
 
 ![Screenshot 1](src/assets/screenshots/1.png)
 ![Screenshot 2](src/assets/screenshots/2.png)
 
-## Demo
 
-- [Link](https://weatherappbar2.netlify.app/)
