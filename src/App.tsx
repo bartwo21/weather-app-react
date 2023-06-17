@@ -1,7 +1,7 @@
 import "./App.scss";
 import Weathers from "./components/weather-box/Weathers";
 import Input from "./components/weather-input/Input";
-import axios from "axios";
+import axios, { AxiosError, isAxiosError } from "axios";
 import { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { TiWeatherStormy } from "react-icons/ti";
@@ -18,6 +18,7 @@ interface IWeather {
 function App() {
   const [data, setData] = useState<IWeather[]>([]);
   const [city, setCity] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,6 +26,7 @@ function App() {
         const response = await axios.get(
           `https://api.weatherapi.com/v1/current.json?key=3880adeae7cd4b6489c220039230306&q=${city}`
         );
+        response.data && setIsLoading(true);
         const currentDay = response.data.current;
         const location = response.data.location;
         const tempToday = currentDay.temp_c.toString();
@@ -36,7 +38,6 @@ function App() {
           `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=942b33899592b904111003ec640c1044&units=metric`
         );
         const nextDay = response2.data.list;
-
         const weatherData: IWeather[] = [
           {
             todayImg: icon,
@@ -46,6 +47,7 @@ function App() {
             nextDay: [nextDay],
           },
         ];
+        setIsLoading(false);
         setData(weatherData);
       } catch (error) {
         console.error(error);
@@ -71,20 +73,10 @@ function App() {
           secondary: "#FFFAEE",
         },
       });
-    } else {
-      toast("Here is the weather.", {
-        icon: <IoMdSunny />,
-        style: {
-          border: "1px solid #d4d9e4",
-          padding: "16px",
-          color: "#001220",
-          background: "#abacad",
-        },
-        iconTheme: {
-          primary: "#201d00",
-          secondary: "#FFFAEE",
-        },
-      });
+    }
+    else if (data.length === 0 ) {
+      toast.error("Please enter a valid city.",);
+      return;
     }
   };
 
@@ -92,6 +84,12 @@ function App() {
     <div className="app">
       <Toaster position="top-right" reverseOrder={false} />
       <Input onCityChange={handleCityChange} />
+      {isLoading ? (
+        <div className="loading">
+          <div className="loading-spinner"></div>
+          <p className="loading-text">Loading...</p>
+        </div>
+      ) : null}
       {data.map((weather, index) => (
         <Weathers
           key={index}

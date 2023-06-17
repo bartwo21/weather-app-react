@@ -8,7 +8,7 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
   justify-content: center;
   color: rgba(255, 255, 255, 0.87);
   min-width: 50%;
-  padding: 2.5rem 0rem;
+  padding: 2.5rem 1rem;
   border-radius: 30px;
   margin-top: 40px;
   box-shadow: rgb(38, 57, 77) 0px 5px 90px 1px;
@@ -151,15 +151,29 @@ $fade-in-animation: fade-in 0.8s 0.18s forwards;
       height: 70px;
     }
   }
+  @media (max-width: 1510px) {
+    .today {
+      .temp-today {
+        h1{
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
   @media (max-width: 768px) {
     .today {
       flex-direction: column;
-
+      
       .temp-today {
         align-items: center;
-
+        h1{
+          font-size: 1.6rem;
+        }
         h2 {
           margin-top: 10px;
+          font-size: 1rem;
+        }
+        p{
           font-size: 1rem;
         }
       }
