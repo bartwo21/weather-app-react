@@ -1,11 +1,11 @@
 import "./App.scss";
 import Weathers from "./components/weather-box/Weathers";
 import Input from "./components/weather-input/Input";
-import axios, { AxiosError, isAxiosError } from "axios";
+import axios from "axios";
 import { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { TiWeatherStormy } from "react-icons/ti";
-import { IoMdSunny } from "react-icons/io";
+
 
 interface IWeather {
   todayImg: string;
