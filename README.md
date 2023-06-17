@@ -22,7 +22,7 @@ Due to the limitations of the second API used in the project, images representin
 
 ## Demo
 
-- [Link](https://weatherappbar2.netlify.app/)
+- [Link](https://648d09f5cc1ae5322316a12e--unrivaled-cactus-3ec579.netlify.app/)
 
 ## Screenshots
 
