@@ -74,7 +74,7 @@ function App() {
         },
       });
     }
-    else if (data.length === 0 ) {
+    else if (newCity !== "" && newCity.length < 3) {
       toast.error("Please enter a valid city.",);
       return;
     }
