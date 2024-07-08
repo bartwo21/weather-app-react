@@ -4,8 +4,7 @@ This project is a weather application built using React, TypeScript, and Vite. I
 
 ## Project Overview
 
-The Weather App is a web application that allows users to check the weather conditions for their location. It provides accurate and up-to-date weather information using the data retrieved from the APIs.
-Due to the limitations of the second API used in the project, images representing the weather conditions are not available. Instead, descriptive text is used to indicate the weather conditions.
+The Weather App is a web application that allows users to check the weather conditions for their location. It provides accurate and up-to-date weather information using the data retrieved from the APIs. Due to the limitations of the second API used in the project, images representing the weather conditions are not available. Instead, descriptive text is used to indicate the weather conditions.
 
 ## Built With
 
@@ -14,6 +13,10 @@ Due to the limitations of the second API used in the project, images representin
 - [React Hot Toast](https://github.com/timolins/react-hot-toast)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Axios](https://axios-http.com/)
+
+## Testing
+
+The project includes both component and end-to-end tests written using [Cypress](https://www.cypress.io/). These tests ensure that the components function correctly and the application works as expected from the user's perspective.
 
 ## Acknowledgements
 
@@ -28,5 +31,3 @@ Due to the limitations of the second API used in the project, images representin
 
 ![Screenshot 1](src/assets/screenshots/1.png)
 ![Screenshot 2](src/assets/screenshots/2.png)
-
-
