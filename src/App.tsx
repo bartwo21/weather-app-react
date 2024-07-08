@@ -2,10 +2,9 @@ import "./App.scss";
 import Weathers from "./components/weather-box/Weathers";
 import Input from "./components/weather-input/Input";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { TiWeatherStormy } from "react-icons/ti";
-
 
 interface IWeather {
   todayImg: string;
@@ -21,6 +20,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    if (city === "") return;
+
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -73,9 +74,8 @@ function App() {
           secondary: "#FFFAEE",
         },
       });
-    }
-    else if (newCity !== "" && newCity.length < 3) {
-      toast.error("Please enter a valid city.",);
+    } else if (newCity !== "" && newCity.length < 3) {
+      toast.error("Please enter a valid city.");
       return;
     }
   };
@@ -90,7 +90,7 @@ function App() {
           <p className="loading-text">Loading...</p>
         </div>
       ) : null}
-      {data.map((weather, index) => (
+      {data?.map((weather, index) => (
         <Weathers
           key={index}
           todayImg={weather.todayImg}

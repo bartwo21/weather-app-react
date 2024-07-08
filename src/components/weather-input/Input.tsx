@@ -25,8 +25,9 @@ const Input: React.FC<IProps> = ({ onCityChange }) => {
         id="input"
         placeholder="Give me a city..."
         onChange={handleChange}
+        data-cy="input"
       />
-      <button onClick={handleSubmit}>
+      <button data-cy="submit" onClick={handleSubmit}>
         <BiSearchAlt />
       </button>
     </div>
